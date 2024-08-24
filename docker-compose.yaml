@@ -30,7 +30,7 @@ services:
 
   user:
     image: user:1.0
-    container_name: cart
+    container_name: user
     depends_on: 
     - redis
     - mongodb
