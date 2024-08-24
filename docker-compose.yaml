@@ -1,20 +1,24 @@
+# networks sets here default so it will apply to all services in compose file
 networks:
   default:
     external:
      name: roboshop
 
 services:
+# docker run -d --name mongodb --network=roboshop mongodb:1.0
   mongodb:
     image: mongodb:1.0
-
+    container_name: mongodb
 
   catalogue:
     image: catalogue:1.0
+    container_name: catalogue
     depends_on:
     - mongodb
 
   web:
     image: web:1.0
+    container_name: web
     ports:
       - "80:80"
     depends_on: 
