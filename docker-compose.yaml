@@ -43,11 +43,11 @@ services:
     - catalogue
 
   mysql:
-    image: mysql
+    image: mysql:1.0
     container_name: mysql
 
   shipping:
-    image: shipping
+    image: shipping:1.0
     container_name: shipping
     depends_on:
     - mysql
